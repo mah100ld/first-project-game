@@ -1,3 +1,5 @@
+let attack = new Attack();
+
 class Player {
     constructor () {
         this.laschetX = width - 900;
@@ -7,7 +9,7 @@ class Player {
         this.LaschetHealth = 100;
         this.soederHealth = 100;
         this.laschetImage;
-        this.soederImage; 
+        this.soederImage;
     }
 
     preload() {
@@ -36,5 +38,15 @@ class Player {
     moveSoederRight () {
         this.soederX += 50;
     }
+
+    // attackLaschet () {
+    //     attack.(this.laschetX, this.laschetY)
+
+    // }
+
+    // attackSoeder () {
+    attack.
+
+    // }
 
 }

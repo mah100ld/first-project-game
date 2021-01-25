@@ -1,5 +1,4 @@
-let player = new Player(); 
-let attack = new Attack();
+let player = new Player (); 
 
 class Game {
 
@@ -38,13 +37,13 @@ class Game {
             player.moveSoederRight ();
         }
 
-        if (keyCode === 69) {
-            player.Laschet(); 
-        }
+        // if (keyCode === 69) {
+        //     player.attackLaschet(); 
+        // }
 
-        if (keyCode === 16) {
-            player.Soeder();
-        }
+        // if (keyCode === 16) {
+        //     player.attackSoeder();
+        // }
     }
 
 }
