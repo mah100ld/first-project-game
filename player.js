@@ -13,8 +13,8 @@ class Player {
     }
 
     preload() {
-        this.laschetImage = loadImage('/sources/Laschet.png')
-        this.soederImage = loadImage('/sources/söder.png')
+        this.laschetImage = loadImage('/sources/Laschet.png');
+        this.soederImage = loadImage('/sources/söder.png');
     }
 
     draw() {
@@ -46,11 +46,13 @@ class Player {
         this.soederX += 50;
     }
 
-    //do the attack
-    attackLaschet () {
-        attack.draw(this.laschetX, this.laschetY)
+    //After pressing the button, the attack function gets invoked and shall as a result pass the coordinates of this 
+    // player to the attack js. 
+    
+    // attackLaschet () {
+    //     attack.draw(this.laschetX, this.laschetY)
 
-    }
+    // }
 
     // attackSoeder () {
     // attack.

@@ -1,5 +1,5 @@
 class Attack {
-//Put the position of the player's head as starting point
+//Put the current position of the player's head as starting point, But where is the best?
     constructor () {
         this.joeImage;
         this.ffp2Image;
