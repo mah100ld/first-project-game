@@ -1,8 +1,7 @@
 // Create the canvas
-const background = new Background;
-const laschet = new Laschet();
-const soeder = new Soeder();
-const controls = new Controls();
+const game = new Game();
+const player = new Player();
+
 
 function setup () {
     createCanvas(width, height);
@@ -10,21 +9,19 @@ function setup () {
 }
 
 function preload() {
-    background.preload();
-    laschet.preload();
-    soeder.preload();
+    game.preload();
+    player.preload();
     
 }
 
 function draw () {
     clear();
-    background.draw();
-    laschet.draw();
-    soeder.draw();
+    game.draw();
+    player.draw()
 
 }
 
-function keys () {
+function keyPressed () {
     controls.keyPressed();
 }
 

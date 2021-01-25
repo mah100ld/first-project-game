@@ -1,46 +1,25 @@
-class Laschet {
-
+class Player {
     constructor () {
-        this.x = width - 900;
-        this.y = height - 200;
-        this.image;
+        this.laschetX = width - 900;
+        this.laschetY = height - 200;
+        this.soederX = width - 100;
+        this.soederY = height - 200;
+        this.laschetImage;
+        this.soederImage; 
     }
 
-    preload () {
-        this.image = loadImage('/sources/Laschet.png')
-        console.log("picture")
-
+    preload() {
+        this.laschetImage = loadImage('/sources/Laschet.png')
+        this.soederImage = loadImage('/sources/söder.png')
     }
 
-    draw () {
-        image (this.image, this.x, this.y, 75, 200)
+    draw() {
+        image(this.laschetImage, this.laschetX, this.laschetY, 75, 200)
+        image(this.soederImage, this.soederX, this.soederY, 75, 200)
     }
 
     moveLeft () {
-        this.y -= 100
-        console.log("It moves")
-    }
 
-}
-
-
-
-class Soeder {
-
-    constructor () {
-        this.x = width - 100;
-        this.y = height - 200;
-        this.image;
-    }
-
-    preload () {
-        this.image = loadImage('/sources/söder.png')
-        console.log("picture")
-
-    }
-
-    draw () {
-        image (this.image, this.x, this.y, 75, 200)
     }
 
 }

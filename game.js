@@ -1,27 +1,24 @@
 //Place the background image for the fight
-class Background {
+class Game {
 
     constructor () {
-        this.image;
+        this.backgroundImage;
     }
     
     preload () {
-        this.image = loadImage("/sources/kanzleramt.jpg");
+        this.backgroundImage = loadImage("/sources/kanzleramt.jpg");
     };
     
     draw () {
-        image(this.image, 0, 0);
-    }
-}
-
-class Controls {
-     
-keyPressed () {
-        console.log("Up")
-
+        image(this.backgroundImage, 0, 0);
     }
 
+    keyPressed () {
+        
+        if(keyCode === 65) {
+            console.log("Up")
+        }
+        }
+
 }
-
-
 
