@@ -4,6 +4,8 @@ class Player {
         this.laschetY = height - 200;
         this.soederX = width - 100;
         this.soederY = height - 200;
+        this.LaschetHealth = 100;
+        this.soederHealth = 100;
         this.laschetImage;
         this.soederImage; 
     }
@@ -17,9 +19,22 @@ class Player {
         image(this.laschetImage, this.laschetX, this.laschetY, 75, 200)
         image(this.soederImage, this.soederX, this.soederY, 75, 200)
     }
+    
+    //Needs refactoring. I tried already putting in "LaschetX" as a parameter in game.js Did not work for now.
+    moveLaschetLeft () {
+        this.laschetX -= 50;
+    }
 
-    moveLeft () {
+    moveSoederLeft () {
+        this.soederX -= 50;
+    }
 
+    moveLaschetRight () {
+        this.laschetX += 50;
+    }
+
+    moveSoederRight () {
+        this.soederX += 50;
     }
 
 }

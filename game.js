@@ -1,4 +1,6 @@
-//Place the background image for the fight
+let player = new Player(); 
+let attack = new Attack();
+
 class Game {
 
     constructor () {
@@ -7,18 +9,43 @@ class Game {
     
     preload () {
         this.backgroundImage = loadImage("/sources/kanzleramt.jpg");
+        player.preload();
+
     };
     
     draw () {
         image(this.backgroundImage, 0, 0);
+        player.draw()
     }
 
+    //Needs refactoring
     keyPressed () {
         
-        if(keyCode === 65) {
-            console.log("Up")
+        if (keyCode === 65) {
+            player.moveLaschetLeft();
         }
+
+        if (keyCode === 37) {
+            player.moveSoederLeft();
+    
         }
+
+        if (keyCode === 68) {
+            player.moveLaschetRight ();
+        }
+
+        if (keyCode === 39) {
+            player.moveSoederRight ();
+        }
+
+        if (keyCode === 69) {
+            player.Laschet(); 
+        }
+
+        if (keyCode === 16) {
+            player.Soeder();
+        }
+    }
 
 }
 
