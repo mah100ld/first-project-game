@@ -9,8 +9,19 @@ class Background {
         this.image = loadImage("/sources/kanzleramt.jpg");
     };
     
-    setup () {
-        console.log('this is the background')
+    draw () {
         image(this.image, 0, 0);
     }
 }
+
+class Controls {
+     
+keyPressed () {
+        console.log("Up")
+
+    }
+
+}
+
+
+

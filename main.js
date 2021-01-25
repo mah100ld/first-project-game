@@ -1,18 +1,30 @@
 // Create the canvas
-Background = new Background ();
+const background = new Background;
+const laschet = new Laschet();
+const soeder = new Soeder();
+const controls = new Controls();
 
 function setup () {
     createCanvas(width, height);
-    Background.setup ();
+    
 }
 
 function preload() {
-    Background.preload();
-
+    background.preload();
+    laschet.preload();
+    soeder.preload();
+    
 }
 
 function draw () {
- 
+    clear();
+    background.draw();
+    laschet.draw();
+    soeder.draw();
 
+}
+
+function keys () {
+    controls.keyPressed();
 }
 

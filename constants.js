@@ -1,3 +1,3 @@
-const width = 1000;
-const height = 600;
+const width = 900;
+const height = 557;
 
