@@ -4,5 +4,5 @@ class Laschet {
 
 class Söder {
 
-    
+
 }
