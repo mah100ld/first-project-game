@@ -31,8 +31,11 @@ class Game {
     
     draw () {
         image(this.backgroundImage, 0, 0);
-        this.player1.draw() // this is the player that is drawn 
+       
+        this.player1.draw() // this is the player that is drawn
         this.player2.draw()
+        
+        
         if (this.laschetAttacks.length !== 0) {
             // better to replace forEach by filter()
             this.laschetAttacks.forEach((attack) => {
@@ -45,7 +48,7 @@ class Game {
 
                 return false // kill it from the array
             } else {
-                this.player2.health -= 10; //need to find a better solution heree
+                this.player2.health -= 10; //need to find a better solution here
                 return true //keep it within the array
             }
         })
@@ -96,6 +99,14 @@ class Game {
                     };
         }
 
+        if (keyCode === 87) {
+            this.player1.y -= 100;
+        }
+
+        if (keyCode === 38) {
+            this.player2.y -= 100;
+        }
+
         if (keyCode === 69) {
             // call attack.laschetThrow(this.player....)
             this.laschetAttacks.push(new Attack(this.joeImage, this.player1.x, this.player1.y))
@@ -105,6 +116,5 @@ class Game {
         if (keyCode === 16) {
             this.soederAttacks.push(new Attack(this.ffp2Image, this.player2.x, this.player2.y))        }
     }
-
 }
 

@@ -12,10 +12,10 @@ class Attack {
     }
     //check for collision
     collision (playerX, playerY) {
-        if (dist(this.objectX, this.objectY, playerX, playerY) > 25 ) {
+        if (dist(this.objectX, this.objectY, playerX, playerY) > 20 ) {
             return false;
         } else {
-    
+            
             return true;
         }
     }
