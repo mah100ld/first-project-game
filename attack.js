@@ -17,8 +17,7 @@ class Attack {
 
         if (dist(this.objectX, this.objectY, playerX, rangeY) > 25 ) {
             return false;
-        } else {
-            
+        } else {        
             return true;
         }
     }

@@ -2,7 +2,8 @@
 let game = new Game()
 
 function setup () {
-    createCanvas(canvasWidth, canvasHeight);
+    let canvas = createCanvas(canvasWidth, canvasHeight);
+    canvas.parent("canvasContainer");
     game.setup();
 }
 

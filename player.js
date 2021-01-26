@@ -24,11 +24,7 @@ class Player {
     if (this.y < lowestHeigth)    
     this.y = this.y + 1;
         // image(this.laschetImage, this.laschetX, this.laschetY, 75, 200)
-      
-
         image(this.image, this.x, this.y, playerWidth, playerHeigth)
-        
-    
     }
     
     // moveLaschetLeft () {
