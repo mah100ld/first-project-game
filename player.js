@@ -2,8 +2,8 @@
 
 class Player {
     constructor (x, y, image) {
-        this.x = x;
-        this.y = y;
+        this.x = width - x;
+        this.y = height - y;
         // this.laschetX = width - 900;
         // this.laschetY = height - 200;
         // this.soederX = width - 100;
@@ -25,7 +25,6 @@ class Player {
         image(this.image, this.x, this.y, 75, 200)
     }
     
-    //Needs refactoring. I tried already putting in "LaschetX" as a parameter in game.js Did not work for now.
     // moveLaschetLeft () {
     //     if (this.laschetX >= 50) {
     //     this.laschetX -= 50;

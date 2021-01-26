@@ -1,9 +1,9 @@
 // Create the canvas
-const game = new Game();
+let game = new Game()
 
 function setup () {
     createCanvas(width, height);
-    
+    game.setup();
 }
 
 function preload() {
