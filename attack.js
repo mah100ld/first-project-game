@@ -12,7 +12,10 @@ class Attack {
     }
     //check for collision
     collision (playerX, playerY) {
-        if (dist(this.objectX, this.objectY, playerX, playerY) > 20 ) {
+
+        let rangeY = playerY + playerHeigth / 2
+
+        if (dist(this.objectX, this.objectY, playerX, rangeY) > 25 ) {
             return false;
         } else {
             

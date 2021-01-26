@@ -2,9 +2,8 @@
 
 class Player {
     constructor (x, y, image) {
-        this.x = width - x;
-        this.y = height - y;
-        this.velocity = 0;
+        this.x = canvasWidth - x;
+        this.y = canvasHeight - y;
         // this.laschetX = width - 900;
         // this.laschetY = height - 200;
         // this.soederX = width - 100;
@@ -22,12 +21,12 @@ class Player {
     // }
 
     draw() {
-    if (this.y < 357)    
+    if (this.y < lowestHeigth)    
     this.y = this.y + 1;
         // image(this.laschetImage, this.laschetX, this.laschetY, 75, 200)
       
 
-        image(this.image, this.x, this.y, 75, 200)
+        image(this.image, this.x, this.y, playerWidth, playerHeigth)
         
     
     }

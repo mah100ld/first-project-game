@@ -14,7 +14,7 @@ class Game {
 
     setup () {
         this.player1 = new Player (900, 200, this.laschetImage); //It is better inside than outside
-        this.player2 = new Player (100, 200, this.soederImage);
+        this.player2 = new Player (150, 200, this.soederImage);
         this.laschetAttacks = [];
         this.soederAttacks= [];
     }
@@ -34,8 +34,6 @@ class Game {
        
         this.player1.draw() // this is the player that is drawn
         this.player2.draw()
-        
-        
         if (this.laschetAttacks.length !== 0) {
             // better to replace forEach by filter()
             this.laschetAttacks.forEach((attack) => {
@@ -43,27 +41,37 @@ class Game {
                 attack.draw();
             })
 
-            this.laschetAttacks = this.laschetAttacks.filter((attack) => {
-            if(attack.collision(this.player2.x, this.player2.y) || attack.objectX.index > width) { //call the collisiion functin with argument player2 coordinates - need to check wheater x and y
+            this.laschetAttacks.forEach((attack) => {
+                if (attack.collision(this.player2.x, this.player2.y)) {
+                    this.player2.health -= 10;
+                    console.log(this.player2.health);
+                }})
 
+            this.laschetAttacks = this.laschetAttacks.filter((attack) => {
+            if(attack.collision(this.player2.x, this.player2.y) || attack.objectX.index > canvasWidth) { //call the collisiion functin with argument player2 coordinates - need to check wheater x and y
                 return false // kill it from the array
             } else {
-                this.player2.health -= 10; //need to find a better solution here
                 return true //keep it within the array
             }
-        })
+            })
         
         }
+
         if (this.soederAttacks.length !== 0) {
             this.soederAttacks.forEach((attack, index) => {
                 attack.objectX--;
                 attack.draw();
             })
 
+            this.soederAttacks.forEach((attack) => {
+                if (attack.collision(this.player1.x, this.player1.y)) {
+                    this.player1.health -= 10;
+                    console.log(this.player1.health);
+                }})
+
             this.soederAttacks = this.soederAttacks.filter((attack) => {
                 if(attack.collision(this.player1.x, this.player1.y) || attack.objectX.index < 0) { //call the collisiion functin with argument player2 coordinates - need to check wheater x and y
                     this.player1.health -= 10;  // --> the score, cannot be here because it would also deduct points when go through the wall
-                    console.log(this.player1.health)
                     return false // kill it from the array
                 } else {
                     return true //keep it within the array
