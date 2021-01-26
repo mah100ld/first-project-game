@@ -10,13 +10,14 @@ class Attack {
     draw() {
         image(this.image, this.objectX, this.objectY, 50, 50);
     }
-
-    isHit() {
-
-    }
-
-    isOutOfScreen() {
-
+    //check for collision
+    collision (playerX, playerY) {
+        if (dist(this.objectX, this.objectY, playerX, playerY) > 25 ) {
+            return false;
+        } else {
+    
+            return true;
+        }
     }
     
     // the cooridnated of the players have to be pushed

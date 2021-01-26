@@ -6,6 +6,7 @@ class Game {
         this.backgroundImage;
         this.laschetImage; 
         this.soederImage;
+        // this.player2.health = 100;
         // attach for La
         // this.attack = new Attack();
     }
@@ -34,16 +35,18 @@ class Game {
         this.player2.draw()
         if (this.laschetAttacks.length !== 0) {
             // better to replace forEach by filter()
-            this.laschetAttacks.forEach((attack, index) => {
+            this.laschetAttacks.forEach((attack) => {
                 attack.objectX++;
                 attack.draw();
             })
 
             this.laschetAttacks = this.laschetAttacks.filter((attack) => {
-            if(attack.collision(this.player2) || attack.x < 0) { //call the collisiion functin
-                return false 
+            if(attack.collision(this.player2.x, this.player2.y) || attack.objectX.index > width) { //call the collisiion functin with argument player2 coordinates - need to check wheater x and y
+
+                return false // kill it from the array
             } else {
-                return true
+                this.player2.health -= 10; //need to find a better solution heree
+                return true //keep it within the array
             }
         })
         
@@ -53,10 +56,18 @@ class Game {
                 attack.objectX--;
                 attack.draw();
             })
+
+            this.soederAttacks = this.soederAttacks.filter((attack) => {
+                if(attack.collision(this.player1.x, this.player1.y) || attack.objectX.index < 0) { //call the collisiion functin with argument player2 coordinates - need to check wheater x and y
+                    this.player1.health -= 10;  // --> the score, cannot be here because it would also deduct points when go through the wall
+                    console.log(this.player1.health)
+                    return false // kill it from the array
+                } else {
+                    return true //keep it within the array
+                }
+            })    
         }
     }
-
-    //Needs refactoring
 
     keyPressed () {
         
