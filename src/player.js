@@ -27,54 +27,15 @@ class Player {
     // }
 
     draw() {
-    // this.health = health;
+
     rect(this.healthBarX,this.healthBarY,200,10)
     fill(23, 23,23);
     rect(this.healthBarX,this.healthBarY,this.health*200/100,10)// 50*200/100
     fill("white");
-    // rect(740,30,200,10)    
+
     if (this.y < lowestHeigth)    
     this.y = this.y + 1;
         // image(this.laschetImage, this.laschetX, this.laschetY, 75, 200)
         image(this.image, this.x, this.y, playerWidth, playerHeigth)
     }
-    
-    // moveLaschetLeft () {
-    //     if (this.laschetX >= 50) {
-    //     this.laschetX -= 50;
-    //     }
-    // }
-
-    // moveSoederLeft () {
-    //     if(this.soederX >= 500) {
-    //     this.soederX -= 50;
-    //     }
-    // }
-
-    // moveLaschetRight () {
-    //     if(this.laschetX <= 300) {
-    //     this.laschetX += 50;
-    //     }
-    // }
-
-    // moveSoederRight () {
-    //     if(this.soederX <= 750)
-    //     this.soederX += 50;
-    // }
-
-    // After pressing the button, the attack function gets invoked and shall as a result pass the coordinates of this 
-    // player to the attack js. 
-    
-
-    // remove it
-    // attackLaschet (attack) {
-    //     attack.laschetThrow(this.laschetX, this.laschetY)
-
-    // }
-
-    // attackSoeder () {
-    // attack.
-
-    // }
-
 }

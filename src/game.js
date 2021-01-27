@@ -36,7 +36,7 @@ class Game {
         this.player1.draw() // this is the player that is drawn
         this.player2.draw()
 
-        if (this.player1.health > 0) { 
+        
 
         if (this.laschetAttacks.length !== 0) {
             // better to replace forEach by filter()
@@ -62,7 +62,7 @@ class Game {
         }
 
         if (this.soederAttacks.length !== 0) {
-            this.soederAttacks.forEach((attack, index) => {
+            this.soederAttacks.forEach((attack) => {
                 attack.objectX--;
                 attack.draw();
             })
@@ -80,14 +80,11 @@ class Game {
                     return true //keep it within the array
                 }
             })    
-        } 
-    } else { console.log("its over"); return this.end === true }
+        }    
     }
 
     endGame () {
-        if (!this.end) {noLoop()};
-    }
-
+        if (this.end = true) { document.location.href = "/win-screen.html"} }
 
     keyPressed () {
         
@@ -133,5 +130,5 @@ class Game {
             this.soederAttacks.push(new Attack(this.ffp2Image, this.player2.x, this.player2.y))        
         }
     }
-}
 
+}
