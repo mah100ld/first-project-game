@@ -5,11 +5,10 @@ function setup () {
     let canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent("canvas");
     game.setup();
-    
 }
 
 function preload() {
-    game.preload();    
+    game.preload();
 }
 
 function draw () {

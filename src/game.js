@@ -8,6 +8,7 @@ class Game {
         this.soederImage;
         this.end = false;
     }
+   
 
 
     setup () {
@@ -30,13 +31,10 @@ class Game {
     
     draw () {
 
-        
         image(this.backgroundImage, 0, 0);
        
         this.player1.draw() // this is the player that is drawn
         this.player2.draw()
-
-        
 
         if (this.laschetAttacks.length !== 0) {
             // better to replace forEach by filter()
@@ -46,9 +44,11 @@ class Game {
             })
 
             this.laschetAttacks.forEach((attack) => {
-                if (attack.collision(this.player2.x, this.player2.y) && this.player2.health > 0) {
+                if (attack.collision(this.player2.x, this.player2.y)) {
                     this.player2.health -= 10;
+                    this.endGame();
                     console.log(this.player2.health);
+                    console.log(this.player1)
                 }})
 
             this.laschetAttacks = this.laschetAttacks.filter((attack) => {
@@ -68,8 +68,9 @@ class Game {
             })
 
             this.soederAttacks.forEach((attack) => {
-                if (attack.collision(this.player1.x, this.player1.y) && this.player1.health > 0) {
+                if (attack.collision(this.player1.x, this.player1.y)) {
                     this.player1.health -= 10;
+                    this.endGame();                    
                     console.log(this.player1.health);
                 }})
 
@@ -80,11 +81,18 @@ class Game {
                     return true //keep it within the array
                 }
             })    
-        }    
+        }   
     }
 
-    // endGame () {
-    //     if (this.end = true) { document.location.href = "/win-screen.html"} }
+    endGame () {
+        if (this.player1.health === 0) {
+        localStorage.setItem('winner', `Laschet`);
+        window.location.href = "/result.html"
+        } else if (this.player2.health === 0) {
+            localStorage.setItem('winner', `Söder`); 
+            window.location.href = "/result.html"
+        }
+    } 
 
     keyPressed () {
         
@@ -132,3 +140,13 @@ class Game {
     }
 
 }
+
+// gameLogic() {
+//     if (this.diver.deadDwellers <= 1) {
+//         console.log('deadfish works');
+//         localStorage.setItem('deadDwellers', this.diver.deadDwellers);
+//         window.location.href = "/result.html"
+//     } else {
+//         console.log('function connected');
+//     }
+// }
