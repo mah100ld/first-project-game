@@ -24,7 +24,7 @@ class Game {
         this.joeImage = loadImage('./sources/joe.png');
         this.ffp2Image = loadImage('./sources/ffp2 .png');
         this.laschetImage = loadImage('./sources/Laschet.png');
-        this.soederImage = loadImage('./sources/söder.png');
+        this.soederImage = loadImage('./sources/soeder.png');
         
     };
     
