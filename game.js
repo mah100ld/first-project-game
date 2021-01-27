@@ -6,9 +6,6 @@ class Game {
         this.backgroundImage;
         this.laschetImage; 
         this.soederImage;
-        // this.player2.health = 100;
-        // attach for La
-        // this.attack = new Attack();
     }
 
 
@@ -27,9 +24,11 @@ class Game {
         this.ffp2Image = loadImage('sources/ffp2 .png');
         this.laschetImage = loadImage('sources/Laschet.png');
         this.soederImage = loadImage('sources/söder.png');
+        
     };
     
     draw () {
+
         image(this.backgroundImage, 0, 0);
        
         this.player1.draw() // this is the player that is drawn
@@ -42,7 +41,7 @@ class Game {
             })
 
             this.laschetAttacks.forEach((attack) => {
-                if (attack.collision(this.player2.x, this.player2.y)) {
+                if (attack.collision(this.player2.x, this.player2.y) && this.player2.health > 0) {
                     this.player2.health -= 10;
                     console.log(this.player2.health);
                 }})
@@ -64,14 +63,13 @@ class Game {
             })
 
             this.soederAttacks.forEach((attack) => {
-                if (attack.collision(this.player1.x, this.player1.y)) {
+                if (attack.collision(this.player1.x, this.player1.y) && this.player1.health > 0) {
                     this.player1.health -= 10;
                     console.log(this.player1.health);
                 }})
 
             this.soederAttacks = this.soederAttacks.filter((attack) => {
                 if(attack.collision(this.player1.x, this.player1.y) || attack.objectX.index < 0) { //call the collisiion functin with argument player2 coordinates - need to check wheater x and y
-                    this.player1.health -= 10;  // --> the score, cannot be here because it would also deduct points when go through the wall
                     return false // kill it from the array
                 } else {
                     return true //keep it within the array
@@ -86,23 +84,22 @@ class Game {
             if (this.player1.x >= canvasWidth - 950) {
                 this.player1.x -= 50;
             }
-            // this.player.moveLaschetLeft();
         }
 
         if (keyCode === 37) {
-            if(this.player2.x >= canvasWidth - 50) {
+            if(this.player2.x >= canvasWidth - 500) {
                     this.player2.x -= 50;
                     }
         }
 
         if (keyCode === 68) {
-            if(this.player1.x <= canvasWidth - 600) {
+            if(this.player1.x <= canvasWidth - 500) {
                 this.player1.x += 50;
                     };
         }
 
         if (keyCode === 39) {
-            if(this.player2.x <= canvasWidth - 950) {
+            if(this.player2.x <= canvasWidth - 100) {
                     this.player2.x += 50;
                     };
         }

@@ -5,10 +5,18 @@ body {
 
 h1 {
     text-align: center;
+    background-color: rgb(190, 190, 190);
+    height:150px;
+    margin: 0;
 }
 
-#canvasContainer {
+.container {
 display: flex;
 justify-content: center;
-box-shadow: 0px 0px 17px 2px rgb(177, 174, 174);
+border:1px solid rgb(177, 174, 174)
 }
+
+#canvas {
+box-shadow: 0px 0px 17px 2px rgb(177, 174, 174);
+border:1px solid rgb(177, 174, 174)
+};

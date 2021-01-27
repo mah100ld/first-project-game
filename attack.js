@@ -15,7 +15,7 @@ class Attack {
 
         let rangeY = playerY + playerHeigth / 2
 
-        if (dist(this.objectX, this.objectY, playerX, rangeY) > 25 ) {
+        if (dist(this.objectX, this.objectY, playerX, rangeY) > 75 ) {
             return false;
         } else {        
             return true;

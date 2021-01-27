@@ -14,13 +14,21 @@ class Player {
         // this.soederImage;
     }
 
+    setup() {
+    
+    }
+
     // move to the game
     // preload() {
     //     this.laschetImage = loadImage('/sources/Laschet.png');
     //     this.soederImage = loadImage('/sources/söder.png');
     // }
 
-    draw() {
+    draw(health) {
+    this.healt = health;
+    
+    rect(50,30,200,10) 
+    rect(740,30,200,10)    
     if (this.y < lowestHeigth)    
     this.y = this.y + 1;
         // image(this.laschetImage, this.laschetX, this.laschetY, 75, 200)
