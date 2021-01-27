@@ -6,12 +6,13 @@ class Game {
         this.backgroundImage;
         this.laschetImage; 
         this.soederImage;
+        this.end = false;
     }
 
 
     setup () {
-        this.player1 = new Player (900, 200, this.laschetImage); //It is better inside than outside
-        this.player2 = new Player (150, 200, this.soederImage);
+        this.player1 = new Player (900, 200, this.laschetImage, 50, 30); //It is better inside than outside
+        this.player2 = new Player (150, 200, this.soederImage, 740, 30);
         this.laschetAttacks = [];
         this.soederAttacks= [];
     }
@@ -29,10 +30,14 @@ class Game {
     
     draw () {
 
+        
         image(this.backgroundImage, 0, 0);
        
         this.player1.draw() // this is the player that is drawn
         this.player2.draw()
+
+        if (this.player1.health > 0) { 
+
         if (this.laschetAttacks.length !== 0) {
             // better to replace forEach by filter()
             this.laschetAttacks.forEach((attack) => {
@@ -75,8 +80,14 @@ class Game {
                     return true //keep it within the array
                 }
             })    
-        }
+        } 
+    } else { console.log("its over"); return this.end === true }
     }
+
+    endGame () {
+        if (!this.end) {noLoop()};
+    }
+
 
     keyPressed () {
         

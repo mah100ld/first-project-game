@@ -1,7 +1,7 @@
 // let attack = new Attack();
 
 class Player {
-    constructor (x, y, image) {
+    constructor (x, y, image, healthBarX, healthBarY) {
         this.x = canvasWidth - x;
         this.y = canvasHeight - y;
         // this.laschetX = width - 900;
@@ -12,6 +12,8 @@ class Player {
         // this.soederHealth = 100;
         this.image = image;
         // this.soederImage;
+        this.healthBarX = healthBarX;
+        this.healthBarY = healthBarY;
     }
 
     setup() {
@@ -24,11 +26,13 @@ class Player {
     //     this.soederImage = loadImage('/sources/söder.png');
     // }
 
-    draw(health) {
-    this.healt = health;
-    
-    rect(50,30,200,10) 
-    rect(740,30,200,10)    
+    draw() {
+    // this.health = health;
+    rect(this.healthBarX,this.healthBarY,200,10)
+    fill(23, 23,23);
+    rect(this.healthBarX,this.healthBarY,this.health*200/100,10)// 50*200/100
+    fill("white");
+    // rect(740,30,200,10)    
     if (this.y < lowestHeigth)    
     this.y = this.y + 1;
         // image(this.laschetImage, this.laschetX, this.laschetY, 75, 200)
