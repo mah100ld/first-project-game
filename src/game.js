@@ -18,13 +18,13 @@ class Game {
     }
     
     preload () {
-        this.backgroundImage = loadImage('../sources/kanzleramt.jpg');
+        this.backgroundImage = loadImage('./src/images/kanzleramt.jpg');
         // this.player.preload();
         // this.attack.preload();
-        this.joeImage = loadImage('../sources/joe.png');
-        this.ffp2Image = loadImage('sources/ffp2.png');
-        this.laschetImage = loadImage('sources/Laschet.png');
-        this.soederImage = loadImage('./sources/soeder.png');
+        this.joeImage = loadImage('./src/images/joe.png');
+        this.ffp2Image = loadImage('./images/ffp2.png');
+        this.laschetImage = loadImage('./images/Laschet.png');
+        this.soederImage = loadImage('images/soeder.png');
         
     };
     
