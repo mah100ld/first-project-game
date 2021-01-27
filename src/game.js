@@ -22,9 +22,9 @@ class Game {
         // this.player.preload();
         // this.attack.preload();
         this.joeImage = loadImage('../sources/joe.png');
-        this.ffp2Image = loadImage('../sources/ffp2.png');
+        this.ffp2Image = loadImage('sources/ffp2.png');
         this.laschetImage = loadImage('sources/Laschet.png');
-        this.soederImage = loadImage('../sources/soeder.png');
+        this.soederImage = loadImage('./sources/soeder.png');
         
     };
     
@@ -83,8 +83,8 @@ class Game {
         }    
     }
 
-    endGame () {
-        if (this.end = true) { document.location.href = "/win-screen.html"} }
+    // endGame () {
+    //     if (this.end = true) { document.location.href = "/win-screen.html"} }
 
     keyPressed () {
         
