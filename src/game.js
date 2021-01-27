@@ -22,9 +22,9 @@ class Game {
         // this.player.preload();
         // this.attack.preload();
         this.joeImage = loadImage('./src/images/joe.png');
-        this.ffp2Image = loadImage('./images/ffp2.png');
-        this.laschetImage = loadImage('./images/Laschet.png');
-        this.soederImage = loadImage('images/soeder.png');
+        this.ffp2Image = loadImage('./src/images/ffp2.png');
+        this.laschetImage = loadImage('./src/images/Laschet.png');
+        this.soederImage = loadImage('./src/images/soeder.png');
         
     };
     
