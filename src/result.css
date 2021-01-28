@@ -3,9 +3,33 @@ body {
     background-color: #ecf0f3; 
     }
 
+
+h1 {
+        text-align: center;
+        margin: 0 0 10px 0;
+        color: #ffffff;
+        background-color: rgba(2, 2, 2, 0.3);;
+        padding: 20px;
+}
+
+.background {
+    background-image: url(https://cdn.prod.www.manager-magazin.de/images/93ec1580-0001-0004-0000-000000511905_w718_r1.5403899721448469_fpx33.1_fpy50.98.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:fixed;
+    height: 100vh;
+    
+}
+
+.picture-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
 .winner-picture {
     width: 150px;
-    margin: 0 auto;
+    padding-left: 500px;
 }
 
 #selection {
@@ -18,10 +42,14 @@ body {
     text-decoration: none;
     text-align: center;
     color: #3B4259;
-    width: 30vw;
+    width: 20vw;
     background-color:rgba(208, 216, 218, 1);
     border-radius: 3%;
     margin: 0 50px;
     box-shadow: 0px 0px 17px 2px #3B4259;
     padding: 10px;
+}
+
+.winner-image {
+    width: 100px;
 }

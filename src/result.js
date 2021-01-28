@@ -7,7 +7,7 @@ change.innerText = `If Söder wants it to be, he's gonne be it. Thats how it is.
 } else {
 
 const change = document.querySelector ('.winner');
-change.innerText = `${winner} will be the new Kanzler`;
+change.innerText = `${winner} will be the new Kanzler!`;
 
 }
 
