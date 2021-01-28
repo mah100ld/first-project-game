@@ -7,15 +7,15 @@ body {
 h1 {
         text-align: center;
         margin: 0 0 10px 0;
-        color: #ffffff;
-        background-color: rgba(2, 2, 2, 0.3);;
+        color: #ffffff;     
+        background-color: rgb(166 192 197);
         padding: 20px;
 }
 
 .background {
     background-image: url(https://cdn.prod.www.manager-magazin.de/images/93ec1580-0001-0004-0000-000000511905_w718_r1.5403899721448469_fpx33.1_fpy50.98.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     background-position:fixed;
     height: 100vh;
     
