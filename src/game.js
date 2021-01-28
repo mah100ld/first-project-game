@@ -87,10 +87,10 @@ class Game {
     endGame () {
         if (this.player1.health === 0) {
         localStorage.setItem('winner', `Söder`);
-        window.location.href = "/result.html";
+        window.location.href = "../result.html";
         } else if (this.player2.health === 0) {
             localStorage.setItem('winner', `Laschet`); 
-            window.location.href = "/result.html"
+            window.location.href = "../result.html"
         }
     } 
 
