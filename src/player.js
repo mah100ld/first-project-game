@@ -28,10 +28,11 @@ class Player {
 
     draw() {
 
-    rect(this.healthBarX,this.healthBarY,200,10)
-    fill(23, 23,23);
-    rect(this.healthBarX,this.healthBarY,this.health*200/100,10)// 50*200/100
-    fill("white");
+    rect(this.healthBarX,this.healthBarY,200,15)
+    noStroke()
+    fill(89, 108, 115);
+    rect(this.healthBarX,this.healthBarY,this.health*200/100,15)// 50*200/100
+    fill(217, 156, 156,);
 
     if (this.y < lowestHeigth)    
     this.y = this.y + 1;
